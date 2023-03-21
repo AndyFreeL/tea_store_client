@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/tea_store_client/static/js/main.93bbdf9d.js",
-    "static/media/enter.png": "/tea_store_client/static/media/enter.92a8e56174b8b0ae5fe1.png",
-    "static/media/cart.png": "/tea_store_client/static/media/cart.88267359dfbcca5ac46a.png",
-    "static/media/logo.webp": "/tea_store_client/static/media/logo.627bf7e04440d447d262.webp",
-    "index.html": "/tea_store_client/index.html",
-    "main.93bbdf9d.js.map": "/tea_store_client/static/js/main.93bbdf9d.js.map"
+    "main.js": "https://andyfreel.github.io/tea_store_client/static/js/main.33564aab.js",
+    "static/media/enter.png": "https://andyfreel.github.io/tea_store_client/static/media/enter.92a8e56174b8b0ae5fe1.png",
+    "static/media/cart.png": "https://andyfreel.github.io/tea_store_client/static/media/cart.88267359dfbcca5ac46a.png",
+    "static/media/logo.webp": "https://andyfreel.github.io/tea_store_client/static/media/logo.627bf7e04440d447d262.webp",
+    "index.html": "https://andyfreel.github.io/tea_store_client/index.html",
+    "main.33564aab.js.map": "https://andyfreel.github.io/tea_store_client/static/js/main.33564aab.js.map"
   },
   "entrypoints": [
-    "static/js/main.93bbdf9d.js"
+    "static/js/main.33564aab.js"
   ]
 }
