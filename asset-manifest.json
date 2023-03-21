@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/tea_store_client/static/js/main.6001ab6b.js",
+    "main.js": "/tea_store_client/static/js/main.b780fc5a.js",
     "static/media/enter.png": "/tea_store_client/static/media/enter.92a8e56174b8b0ae5fe1.png",
     "static/media/cart.png": "/tea_store_client/static/media/cart.88267359dfbcca5ac46a.png",
     "static/media/logo.webp": "/tea_store_client/static/media/logo.627bf7e04440d447d262.webp",
     "index.html": "/tea_store_client/index.html",
-    "main.6001ab6b.js.map": "/tea_store_client/static/js/main.6001ab6b.js.map"
+    "main.b780fc5a.js.map": "/tea_store_client/static/js/main.b780fc5a.js.map"
   },
   "entrypoints": [
-    "static/js/main.6001ab6b.js"
+    "static/js/main.b780fc5a.js"
   ]
 }
