@@ -18,13 +18,11 @@ const DrinkPage = () => {
     useEffect(() => {
         fetchOneDrink(id).then(data => {
             setDrinkOne(data)
-            console.log('component')
         })
         getBasket().then(data => drink.setBaskets(data.rows))
     }, [])
 
     useEffect(() => {
-        console.log('basket')
         getBasket().then(data => drink.setBaskets(data.rows))
     }, [drink.basket])
 
@@ -95,7 +93,7 @@ const DrinkPage = () => {
                     </Row>
                 </Col>
                 <Col md={4}>
-                    <Image width={300} height={300} src={process.env.REACT_APP_API_URL + drinkOne.img}/>
+                    <Image width={300} height={300} src={drinkOne.img}/>
                 </Col>
             </Row>
         </Container>

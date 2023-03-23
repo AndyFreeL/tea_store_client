@@ -8,7 +8,7 @@ const DrinkItem = ({drink}) => {
     return (
         <Col md={3} className='mt-3'>
             <Card style={{width: 200, cursor: 'pointer'}} border={'light'}>
-                <Image width={200} height={200} src={process.env.REACT_APP_API_URL + drink.img}/>
+                <Image width={200} height={200} src={drink.img}/>
                 <div className='d-flex justify-content-between align-items-center m-1 text-black-50'>
                     <div>В наличии</div>
                 </div>

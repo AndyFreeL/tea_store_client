@@ -3,13 +3,19 @@ import {createDrink, fetchSubtypes, fetchTypes} from "../../api/drinkApi";
 import {Button, Col, Dropdown, Form, Modal, Row} from "react-bootstrap";
 import {Context} from "../../index";
 import {observer} from "mobx-react-lite";
+import {getApp} from "firebase/app";
+import {getDownloadURL, getStorage, ref, uploadBytesResumable} from "firebase/storage";
+
 
 const CreateDrink = observer(({show, onHide}) => {
     const {drink} = useContext(Context)
 
+    const firebaseApp = getApp();
+    const storage = getStorage(firebaseApp, "gs://filestorage-e5c3b.appspot.com");
+
     const [name, setName] = useState('')
     const [price, setPrice] = useState('')
-    const [file, setFile] = useState(null)
+    const [file, setFile] = useState('')
     const [info, setInfo] = useState([])
 
     const addInfo = () => {
@@ -23,7 +29,32 @@ const CreateDrink = observer(({show, onHide}) => {
     }
 
     const selectFile = e => {
-        setFile(e.target.files[0])
+        const fileImg = e.target.files[0]
+        const fileName = fileImg.name
+        const storageRef = ref(storage, 'images/' + fileName);
+        const uploadTask = uploadBytesResumable(storageRef, fileImg);
+
+        uploadTask.on('state_changed', (snapshot) => {
+                const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                console.log('Upload is ' + progress + '% done');
+                switch (snapshot.state) {
+                    case 'paused':
+                        console.log('Upload is paused');
+                        break;
+                    case 'running':
+                        console.log('Upload is running');
+                        break;
+                }
+            },
+            (error) => {
+                console.log('Error is', error)
+            },
+            () => {
+                getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                    console.log('File available at', downloadURL);
+                    setFile(downloadURL)
+                });
+            });
     }
 
     const addDrink = () => {
