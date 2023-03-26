@@ -12,7 +12,7 @@ const DrinkItem = ({drink}) => {
                 <div className='d-flex justify-content-between align-items-center m-1 text-black-50'>
                     <div>В наличии</div>
                 </div>
-                <div className='pb-3'>{drink.name}</div>
+                <div style={{minHeight: 100,}} className='pb-3'>{drink.name}</div>
                 <div>{drink.price} $</div>
                 <Button variant={'outline-success'} onClick={() => navigate(DRINK_ROUTE + "/" + drink.id)}>Подробнее</Button>
             </Card>

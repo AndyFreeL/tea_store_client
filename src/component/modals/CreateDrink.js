@@ -3,14 +3,20 @@ import {createDrink, fetchSubtypes, fetchTypes} from "../../api/drinkApi";
 import {Button, Col, Dropdown, Form, Modal, Row} from "react-bootstrap";
 import {Context} from "../../index";
 import {observer} from "mobx-react-lite";
-import {getApp} from "firebase/app";
+import {initializeApp} from "firebase/app";
 import {getDownloadURL, getStorage, ref, uploadBytesResumable} from "firebase/storage";
+
+const firebaseConfig = {
+    storageBucket: "filestorage-e5c3b.appspot.com",
+};
+
+
+let firebaseApp = initializeApp(firebaseConfig)
 
 
 const CreateDrink = observer(({show, onHide}) => {
     const {drink} = useContext(Context)
 
-    const firebaseApp = getApp();
     const storage = getStorage(firebaseApp, "gs://filestorage-e5c3b.appspot.com");
 
     const [name, setName] = useState('')
