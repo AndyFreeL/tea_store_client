@@ -1,10 +1,9 @@
 import React, {useContext, useEffect, useState} from 'react';
 import Header from "./component/Header";
 import AppRouter from "./component/AppRouter";
-import {BrowserRouter, HashRouter} from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
 import {observer} from "mobx-react-lite";
 import {check} from "./api/userApi";
-import {Container, Spinner} from "react-bootstrap";
 import {Context} from "./index";
 import Loader from "./component/Loader";
 
