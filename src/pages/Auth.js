@@ -40,6 +40,7 @@ const Auth = observer(() => {
                    style={{height: window.innerHeight - 54}}>
             <Card style={{width: 600}} className='p-5'>
                 <h2>{isLogin ? 'Авторизация' : 'Регистрация'}</h2>
+                <div>Тестовый аккаун: test@test.ru / test</div>
                 <Form className='d-flex flex-column'>
                     <Form.Control className='mt-3' placeholder='Введите e-mail' value={email} onChange={e=>setEmail(e.target.value)}/>
                     <Form.Control className='mt-3' placeholder='Введите пароль' value={password} onChange={e=>setPassword(e.target.value)} type='password'/>
